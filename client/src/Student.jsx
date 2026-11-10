@@ -195,6 +195,10 @@ function Documents({ app, reload, setView }) {
           </>
         )}
       </div>
+      <div style={{ display: "flex", justifyContent: "flex-end", alignItems: "center", gap: 12, marginTop: 16 }}>
+        {!docsOk(a) && <span className="muted" style={{ fontSize: 13 }}>Upload all three documents to continue.</span>}
+        <button className="btn primary" disabled={!docsOk(a)} onClick={() => setView("pay")}>Next: Payment →</button>
+      </div>
     </>
   );
 }
